@@ -1,0 +1,23 @@
+body {
+    background-color: #eeddb7f0;
+}
+
+.jumbotron {
+	background: url(../images/choppedimage.jpeg) center center no-repeat;
+	height: 400px;
+}
+
+.jumbotron p {
+    margin-bottom: 17px;
+    font-size: 26px;
+    font-weight: 200;
+    position: relative;
+    top: 240px;
+    left: 329px;
+    color: rgba(255, 255, 255, 0.959);
+}
+
+#add-item {
+    background-color: #ee8239;
+    font-weight: 20px;
+}

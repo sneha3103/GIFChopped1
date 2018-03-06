@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>You've been GIFChopped!</title>
+
+    <!--LINKING BOOTSTRAP  -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<!-- LINKING CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	
+</head>
+<body>
+
+
+ <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4"></h1>
+            <p class="lead">"This is a cooking show, not a crying show"</p>
+     </div>
+ </div>
+
+ <div class="container">
+        <h1>Click on any of the following food items to watch the magic happen! </h1>
+    
+        <!-- Food Items will be placed here -->
+        <div id="food-view"></div>
+    
+        <!-- The rendered buttons will get placed here  -->
+        <div id="buttons-food"></div>
+    
+        <form id="food-form">
+          <label for="food-input">Add on your ingredients:</label>
+          <input type="text" id="food-input">
+          <br>
+    
+          <!-- When user clicks on the button after inputting their food item, the add button adds on their item of choice.  -->
+          <input id="add-item" type="submit" value="Add Food Item">
+        </form>
+
+
+
+    <!-- LINKING JQUERY -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- LINKING JAVASCRIPT -->
+	<script src="assets/javascript/gif.js"></script>
+    
+</body>
+</html>
