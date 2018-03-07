@@ -37,11 +37,11 @@ function displayFoodItemInfo () {
          // Displaying the rating
          foodDiv.append(pRating);
         
-         image.addClass("imagegif")
+        
          // Retrieving the URL for the image
          var imgURL = response.data[i].images.fixed_height.url;
         //  console.log(response.data[i].images.fixed_height.url);
-        image.attr("data-state", "still");
+       
 
          // Creating an element to hold the image
          var image = $("<img>").attr("src", imgURL);
