@@ -45,6 +45,8 @@ function displayFoodItemInfo () {
          var image = $("<img>");
          image.attr("src", imgURL);
 
+
+        //Created an id of gifimage and an attribute of data-state = still to the image variable to link to the jquery function when working with animation.
          image.addClass("#gifimage");
          image.attr("data-state", "still");
 
@@ -55,6 +57,7 @@ function displayFoodItemInfo () {
          // Putting the entire movie above the previous movies
          $("#food-view").append(foodDiv);
         
+         //Created a jquery function so that when the id of gif image is clicked, the gif image's state will run on the following if function. 
          $("#gifimage").on("click", function() {
             var state = $(this).attr("data-state");
 
