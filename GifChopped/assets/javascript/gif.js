@@ -9,11 +9,54 @@ function displayFoodItemInfo () {
     var food = $(this).attr("data-name");
     var foodStr = food.split(" ").join("+");
     var APIKey =  "DjWtmM2fUL6AYn27DkHYvhO436OOAUck";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + foodStr + "&api_key=" + APIkey + "&limit=5";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + foodStr + "&api_key=" + APIKey + "&limit=10";
 
     //Need to create AJAX call 
+    $.ajax ({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response){
+        console.log(response);
 
+        var results = response.data;
+        
+        for (var i = 0; i < results.length; i++) {
+
+        
+
+         // Creating a div to hold the food item
+         var foodDiv = $("<div>").addClass("fooditem");
+        //need to create for loop for the response i
+         // Storing rating data
+         var rating = response.data[i].rating;
+         console.log(response.data[i].rating);
+
+         // Creating an element to have the rating displayed
+         var pRating = $("<p>").text("Rating: " + rating);
+
+         // Displaying the rating
+         foodDiv.append(pRating);
+        
+         image.addClass("imagegif")
+         // Retrieving the URL for the image
+         var imgURL = response.data[i].images.fixed_height.url;
+        //  console.log(response.data[i].images.fixed_height.url);
+        image.attr("data-state", "still");
+
+         // Creating an element to hold the image
+         var image = $("<img>").attr("src", imgURL);
+
+         // Appending the image
+         foodDiv.append(image);
+
+         // Putting the entire movie above the previous movies
+         $("#food-view").append(foodDiv);
+
+        }
+    });
 }
+
+
 
 //This function is to create buttons for each element in the array and adding it to the div id of buttons-food.
 function createButton () {
