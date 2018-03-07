@@ -42,14 +42,30 @@ function displayFoodItemInfo () {
        
 
          // Creating an element to hold the image
-         var image = $("<img>").attr("src", imgURL);
+         var image = $("<img>");
+         image.attr("src", imgURL);
+
+         image.addClass("#gifimage");
+         image.attr("data-state", "still");
+
 
          // Appending the image
          foodDiv.append(image);
 
          // Putting the entire movie above the previous movies
          $("#food-view").append(foodDiv);
+        
+         $(".gif").on("click", function() {
+            var state = $(this).attr("data-state");
 
+            if (state === "still") {
+                $(this).attr("src", response.data[i].images.fixed_height.url);
+                $(this).attr("data-state", "animate"); 
+            } else {
+              $(this).attr("src", response.data[i].images.fixed_height_still.url);
+              $(this).attr("data-state", "still");
+            }
+         });
         }
     });
 }

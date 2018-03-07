@@ -21,3 +21,14 @@ body {
     background-color: #ee8239;
     font-weight: 20px;
 }
+
+#food-form {
+    position: relative;
+    top: 100px;
+}
+
+#buttons-food {
+    position: relative;
+    top: 50px;
+}
+
