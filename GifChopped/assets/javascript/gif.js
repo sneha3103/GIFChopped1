@@ -22,8 +22,6 @@ function displayFoodItemInfo () {
         
         for (var i = 0; i < results.length; i++) {
 
-        
-
          // Creating a div to hold the food item
          var foodDiv = $("<div>").addClass("fooditem");
         //need to create for loop for the response i
@@ -39,7 +37,7 @@ function displayFoodItemInfo () {
         
         
          // Retrieving the URL for the image
-         var imgURL = response.data[i].images.fixed_height.url;
+         var imgURL = response.data[i].images.fixed_height_still.url;
         //  console.log(response.data[i].images.fixed_height.url);
        
 
