@@ -32,3 +32,30 @@ body {
     top: 50px;
 }
 
+/* ADDING MEDIA QUERIES */
+
+@media only screen and (max-width: 640px) {
+    .jumbotron p {
+        position: relative;
+        left: 80px;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .jumbotron p {
+        position: relative;
+        left: 121px;
+    }
+
+}
+
+@media only screen and (max-width: 980px) {
+    .jumbotron p {
+        position: relative;
+        left: 121px;
+    }
+
+}
+

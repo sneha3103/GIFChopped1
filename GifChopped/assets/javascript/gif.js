@@ -55,7 +55,7 @@ function displayFoodItemInfo () {
          // Putting the entire movie above the previous movies
          $("#food-view").append(foodDiv);
         
-         $(".gif").on("click", function() {
+         $("#gifimage").on("click", function() {
             var state = $(this).attr("data-state");
 
             if (state === "still") {
