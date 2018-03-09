@@ -62,7 +62,9 @@ function displayFoodItemInfo () {
          $("#food-view").append(foodDiv);
         
          //Created a jquery function so that when the id of gif image is clicked, the gif image's state will run on the following if function. 
-         $(".gifimage").on("click", function() {
+         $(image).on("click", function() {
+
+            
             var state = $(this).attr("data-state");
 
             if (state === "still") {
@@ -73,10 +75,11 @@ function displayFoodItemInfo () {
               $(this).attr("src", $(this).attr("data-still"));
               $(this).attr("data-state", "still");
             }
-         });
-        }
-    });
-}
+         })
+         };
+        })
+    };
+
 
 
 
