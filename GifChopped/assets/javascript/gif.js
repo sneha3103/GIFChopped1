@@ -37,18 +37,22 @@ function displayFoodItemInfo () {
         
         
          // Retrieving the URL for the image
-         var imgURL = response.data[i].images.fixed_height_still.url;
+         var imgStillURL = response.data[i].images.fixed_height_still.url;
         //  console.log(response.data[i].images.fixed_height.url);
-       
+        
+         var imgAnimateURL = response.data[i].images.fixed_height.url;
+         console.log(response.data[i].images.fixed_height.url);
 
          // Creating an element to hold the image
          var image = $("<img>");
-         image.attr("src", imgURL);
-
+         image.attr("src", imgStillURL);
+         image.attr("data-still", imgStillURL);
+         image.attr("data-animate", imgAnimateURL);
+         image.attr("data-state", "still");
 
         //Created an id of gifimage and an attribute of data-state = still to the image variable to link to the jquery function when working with animation.
-         image.addClass("#gifimage");
-         image.attr("data-state", "still");
+         image.addClass("gifimage");
+         
 
 
          // Appending the image
@@ -58,14 +62,15 @@ function displayFoodItemInfo () {
          $("#food-view").append(foodDiv);
         
          //Created a jquery function so that when the id of gif image is clicked, the gif image's state will run on the following if function. 
-         $("#gifimage").on("click", function() {
+         $(".gifimage").on("click", function() {
             var state = $(this).attr("data-state");
 
             if (state === "still") {
-                $(this).attr("src", response.data[i].images.fixed_height.url);
+                // $(this).attr("src", response.data[i].images.fixed_height.url);
+                $(this).attr("src", $(this).attr("data-animate"));
                 $(this).attr("data-state", "animate"); 
             } else {
-              $(this).attr("src", response.data[i].images.fixed_height_still.url);
+              $(this).attr("src", $(this).attr("data-still"));
               $(this).attr("data-state", "still");
             }
          });
